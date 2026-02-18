@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Pertama Man</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            padding-top: 80px;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #00ffff;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Home Section */
+        #home {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .layout {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .left {
+            max-width: 400px;
+            text-align: left;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding-right: 40px;
+        }
+
+        .right {
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            color: #00ffff;
+            margin-bottom: 15px;
+        }
+
+        p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .profile {
+            border-radius: 50%;
+            border: 3px solid #ff4444;
+            margin: 20px 0;
+            box-shadow: 0 0 20px #ff4444;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        button,
+        .btn {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        button:hover,
+        .btn:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        #about {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        #about h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #00ffff;
+        }
+
+        /* Skills Section */
+        #skill {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #skill h2 {
+            margin-bottom: 40px;
+            font-size: 36px;
+            color: #00ffff;
+        }
+
+        .skill-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-box {
+            background-color: #1e293b;
+            border-radius: 15px;
+            padding: 30px;
+            width: 350px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-box h3 {
+            margin-bottom: 15px;
+            color: #00ff99;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        #projects h2 {
+            margin-bottom: 40px;
+            font-size: 36px;
+            color: #00ffff;
+        }
+
+        .project-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .project-box {
+            background-color: #1e293b;
+            border-radius: 15px;
+            padding: 30px;
+            width: 400px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .project-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-box h3 {
+            margin-bottom: 15px;
+            color: #ffaa00;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #00ffff;
+        }
+
+        /* Animasi */
+        .fade-in {
+            animation: fadeUp 1s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .layout {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .left {
+                border-right: none;
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .skill-box,
+            .project-box {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2 class="logo">Man</h2>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skill">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home">
+        <div class="container">
+            <div class="layout fade-in">
+                <div class="left">
+                    <h1>Suparman Setiawan</h1>
+                    <h3>Accounting Student | Web Learner</h3>
+                    <p>Menggabungkan ilmu akuntansi dan teknologi informasi untuk masa depan yang lebih baik.</p>
+                    <img src="WhatsApp Image 2026-02-17 at 23.57.11.jpeg" alt="Foto Profile" class="profile">
+                    <p>Gue lagi belajar menjadi web developer profesional</p>
+                    <a href="https://wa.me/6283173846380" class="btn">Hubungi Gue</a>
+                </div>
+                <div class="right">
+                    <div class="card">
+                        <h2>Skill</h2>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <button onclick="window.open('https://wa.me/6283173846380')">Hubungi Gue</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Saya adalah siswa SMK jurusan Akuntansi yang memiliki minat di bidang keuangan dan teknologi informasi.
+                Saat ini saya sedang mempelajari HTML, CSS, dan JavaScript untuk mengembangkan kemampuan digital saya.
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skill">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skill-container">
+                <div class="skill-box">
+                    <h3>Accounting</h3>
+                    <p>Jurnal umum, Jurnal penyesuaian, Neraca saldo, Buku besar, Laporan keuangan, Microsoft Excel</p>
+                </div>
+                <div class="skill-box">
+                    <h3>Technology</h3>
+                    <p>HTML, CSS, JavaScript, VS Code</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-container">
+                <div class="project-box">
+                    <h3>Project 1: Portfolio Website</h3>
+                    <p>Website pertama saya menggunakan HTML dan CSS untuk menampilkan informasi pribadi dan
+                        keterampilan saya.</p>
+                </div>
+                <div class="project-box">
+                    <h3>Laporan Keuangan Excel</h3>
+                    <p>Saya membuat laporan keuangan sederhana menggunakan Microsoft Excel untuk latihan akuntansi saya.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Email: man@example.com</p>
+            <p>WhatsApp: 0831-7384-6380</p>
+        </div>
+    </section>
+
+    <script>
+        function kontak() {
+            alert("Nomor kontak: 0831-7384-6380");
+        }
+    </script>
+
+</body>
+
+</html>
