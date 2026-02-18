@@ -195,6 +195,57 @@
         * {
             box-sizing: border-box;
         }
+
+        .fade-in {
+            animation: fadeUp 1s ease forwards;
+            transform: translateY(30px);
+            opacity: 0;
+        }
+
+        @keyframes fadeUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        #project {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .project-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #111 border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            transition: transform 0.3s ease;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card :hover {
+            transform: translateY(-10px);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: cyan;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 
@@ -203,54 +254,87 @@
         <h2 class="logo">Man</h2>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
+            <section id="home">
+                <h1>Suparman Setiawan</h1>
+                <h3>Accouting Student | Web Learner</h3>
+                <p>Menggabungkan ilmu akuntansi dan teknologi informasi untuk masa depan yang lebih baik.</p>
+                <button onclick="kontak()">Hubungi Gue</button>
+            </section>
             <li><a href="#">About</a></li>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Saya adalah siswa SMK jurusan Akuntansi yang memiliki minat di bidang keuangan dan teknologi
+                    informasi.
+                    Saat ini saya sedang mempelajari HTML, CSS, dan JavaScript untuk mengembangkan kemampuan digital
+                    saya.
+                </p>
+            </section>
+            <section id="skill">
+                <h2>My Skills</h2>
+                <h3>Accouting</h3>
+                <p>Jurnal umum, Jurnal penyesuaian, Neraca saldo, Buku besar, Laporan keuangan, Microsoft Excel</p>
+                <h3>Technology</h3>
+                <p>HTML, CSS, JavaScript, VS Code</p>
+            </section>
             <li><a href="#">Projects</a></li>
             <li><a href="#">Contact</a></li>
+            <script>
+                function kontak() {
+                    window.location.href = "https://wa.me/6283173846380";
+                }
+            </script>
     </nav>
     <div class="container">
         <div class="layout">
             <div class="layout" id="home">
-                <div class="left">
-                    <h1>MAN - Web Developer</h1>
-                    <img src="WhatsApp Image 2026-02-17 at 23.57.11.jpeg"
-                        alt="Foto Profile" class="profile">
-                    <p>Gue lagi belajar menjadi web developer profesional</p>
-                </div>
-                <div class="right">
-                    <div class="card">
-                        <h2>Skill</h2>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                        </ul>
+                <div class="layout fade-in" id="home">
+                    <div class="left">
+                        <h1>MAN - Web Developer</h1>
+                        <img src="c:\Users\suparman setiawan\Downloads\WhatsApp Image 2026-02-17 at 23.57.11.jpeg"
+                            alt="Foto Profile" class="profile">
+                        <p>Gue lagi belajar menjadi web developer profesional</p>
                     </div>
+                    <div class="right">
+                        <div class="card">
+                            <h2>Skill</h2>
+                            <ul>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
 
-                    <button onclick="kontak()">Hubungi Gue</button>
+                        <button onclick="window.open('https://wa.me/6283173846380')">Hubungi Gue</button>
+                        <script>
+                            function kontak() {
+                                alert("Nomor kontak: 0831-7384-6380");
+                            }
+                        </script>
+                    </div>
                 </div>
+                <section class="projects" id="projects">
+                    <section class="projectsfade-in" id="projects">
+                        <h2>My Projects</h2>
+                        <div class="project-card">
+                            <h3>Project 1: Portfolio Website</h3>
+                            <p>website pertama gue pakai HTML DAN CSS.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Coming soon</h3>
+                            <p>gue lagi buat project baru, tunggu aja yaa.</p>
+                        </div>
+                    </section>
             </div>
-            <section class="projects" id="projects">
-                <h2>My Projects</h2>
-                <div class="project-card">
-                    <h3>Project 1: Portfolio Website</h3>
-                    <p>website pertama gue pakai HTML DAN CSS.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Coming soon</h3>
-                    <p>gue lagi buat project baru, tunggu aja yaa.</p>
-                </div>
-            </section>
-        </div>
-        <script>
-            function kontak() {
-                alert("Nomor kontak: 0831-7384-6380");
+            <script>
+                <section class="contactfade-in" id="contact">
+                    function kontak() {
+                        alert("Nomor kontak: 0831-7384-6380");
             }
-            <section class="contact" id="contact">
-                <h2>Contact Me</h2>
-                <p>Email: man@example.com</p>
-            </section>
-        </script>
+                    <section class="contact" id="contact">
+                        <h2>Contact Me</h2>
+                        <p>Email:man@example.com</p>
+                    </section>
+            </script>
 </body>
-
 
 </html>
