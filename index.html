@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Website Pertama Man</title>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: white;
+            font-family: 'Segoe Ui', sans-serif;
+            margin: 0;
+        }
+
+
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            animation: muncul 2s ease-in-out;
+            margin-bottom: 10px;
+        }
+
+        p {
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+        .profile {
+            border-radius: 50%;
+            margin: 20px 0;
+            object-fit: cover;
+            width: 150px;
+            height: 150px;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px auto;
+            width: 300px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+            transform: 0.3s ease-in-out;
+        }
+
+        .profile {
+            border-radius: 50%;
+            border: 3px solid red;
+            margin-top: 20px;
+            box-shadow: 0 0 20px red;
+            width: 150px;
+            height: 150px;
+        }
+
+        .layout {
+            display: flex;
+            gap: 100px;
+            margin-top: 100px;
+        }
+
+        .layout {
+            display: flex;
+            flex-direction: row;
+            gap: 60px;
+            justify-content: center;
+            align-items: center;
+            min-width: 100vh;
+        }
+
+        .left {
+            max-width: 400px;
+        }
+
+        .right {
+            max-width: 400px;
+        }
+
+        .left,
+        .right {
+            width: 350px;
+        }
+
+        .left {
+            width: 350px;
+            text-align: left;
+        }
+
+        .right {
+            width: 350px;
+        }
+
+        .right {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .left {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding-right: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .layout {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .left,
+            .right {
+                max-width: 100%;
+            }
+
+
+        }
+
+        .projects {
+            margin-top: 100px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px auto;
+            width: 300px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #00ffff;
+        }
+
+        body {
+            padding-top: 80px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <h2 class="logo">Man</h2>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+    </nav>
+    <div class="container">
+        <div class="layout">
+            <div class="layout" id="home">
+                <div class="left">
+                    <h1>MAN - Web Developer</h1>
+                    <img src="c:\Users\suparman setiawan\Downloads\WhatsApp Image 2026-02-17 at 23.57.11.jpeg"
+                        alt="Foto Profile" class="profile">
+                    <p>Gue lagi belajar menjadi web developer profesional</p>
+                </div>
+                <div class="right">
+                    <div class="card">
+                        <h2>Skill</h2>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="kontak()">Hubungi Gue</button>
+                </div>
+            </div>
+            <section class="projects" id="projects">
+                <h2>My Projects</h2>
+                <div class="project-card">
+                    <h3>Project 1: Portfolio Website</h3>
+                    <p>website pertama gue pakai HTML DAN CSS.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Coming soon</h3>
+                    <p>gue lagi buat project baru, tunggu aja yaa.</p>
+                </div>
+            </section>
+        </div>
+        <script>
+            function kontak() {
+                alert("Nomor kontak: 0831-7384-6380");
+            }
+            <section class="contact" id="contact">
+                <h2>Contact Me</h2>
+                <p>Email: man@example.com</p>
+            </section>
+        </script>
+</body>
+
+</html>
